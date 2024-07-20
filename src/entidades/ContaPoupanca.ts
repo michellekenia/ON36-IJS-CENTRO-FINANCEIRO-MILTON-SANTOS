@@ -1,8 +1,8 @@
 class ContaPoupanca extends ContaBancaria {
     private taxaJuros: number
 
-    constructor(numeroConta: string, idAgencia: number, cliente: Cliente, taxaJuros: number) {
-        super(numeroConta, idAgencia, cliente, "Poupança")
+    constructor(numeroConta: string, idAgencia: number, taxaJuros: number, saldo: number) {
+        super(numeroConta, idAgencia, saldo)
         this.taxaJuros = taxaJuros
     }
 
