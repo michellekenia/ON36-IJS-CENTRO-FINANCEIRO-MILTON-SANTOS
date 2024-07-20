@@ -2,7 +2,7 @@ abstract class ContaBancaria {
     
     private numeroConta: string
     private idAgencia: number    
-    private saldo: number
+    protected saldo: number
 
     constructor(numeroConta: string, idAgencia: number, saldo: number){
         this.numeroConta = numeroConta

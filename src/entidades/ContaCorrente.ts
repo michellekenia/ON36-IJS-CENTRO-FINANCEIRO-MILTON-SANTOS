@@ -9,9 +9,10 @@ class ContaCorrente extends ContaBancaria {
     }
 
     public sacar(valor: number): void {
+        const saldoTotal = this.saldo + this.limiteChequeEspecial
         if (valor <= 0 ) {
             throw new Error ("O valor deve ser maior do que zero.")
-        } if (valor > (this.saldo + this.limiteChequeEspecial)) {
+        } if (valor > saldoTotal) {
             throw new Error ("Você não tem saldo o suficiente.")
         } else {
             this.saldo -= valor
@@ -29,7 +30,8 @@ class ContaCorrente extends ContaBancaria {
     }
 
     public transferir(valor: number, contaDestino: ContaBancaria): void {
-        if (valor < this.saldo + this.limiteChequeEspecial) {
+        const saldoTotal = this.saldo + this.limiteChequeEspecial
+        if (valor < saldoTotal) {
             this.sacar(valor)
             contaDestino.depositar(valor)
         }  else {
