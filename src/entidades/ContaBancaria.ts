@@ -1,20 +1,38 @@
 abstract class ContaBancaria {
     
-    protected numeroConta: string
-    protected idAgencia: number    
-    protected saldo: number
-    protected dataAbertura: Date
-    protected cliente: Cliente
-    protected tipoConta: string
+    private numeroConta: string
+    private idAgencia: number    
+    private saldo: number
 
-    constructor(numeroConta: string, idAgencia: number, cliente: Cliente, tipoConta: string){
+    constructor(numeroConta: string, idAgencia: number, saldo: number){
         this.numeroConta = numeroConta
         this.idAgencia = idAgencia
-        this.saldo = 0
-        this.cliente = cliente
-        this.dataAbertura = new Date()
-        this.tipoConta = tipoConta
+        this.saldo = saldo
         
+    }
+
+    public getNumeroConta(): string {
+        return this.numeroConta
+    }
+
+    public setNumeroConta(numeroConta: string): void {
+        this.numeroConta = numeroConta
+    }
+
+    public getIdAgencia(): number {
+        return this.idAgencia
+    }
+
+    public setIdAgencia(idAgencia: number): void{
+        this.idAgencia = idAgencia
+    }
+
+    public getsaldo(): number {
+        return this.saldo
+    }
+
+    public setSaldo(saldo: number): void {
+        this.saldo = saldo
     }
 
     //Método para consultar saldo 
